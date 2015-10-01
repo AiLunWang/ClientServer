@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 public class myfileserver {
      
     public final static int SOCKET_PORT = 13267;
-    public static int n = 0, m = 0; //initialise variables to hold N and M
+    public int n = 0, m = 0; //initialise variables to hold N and M
  
     public static void main (String [] args ) throws IOException {
          
@@ -30,17 +30,17 @@ public class myfileserver {
             }
         }
     //Create getters and setters for N and M values
-    public static synchronized int getM() {
-        return m; // number of attempts
+    public synchronized int getM() {
+        return m;
     }
-    public static synchronized int getN() {
-        return n; // number of successes
+    public synchronized int getN() {
+        return n;
     }
     //mutex only one sync 
-    public static synchronized void setM(int passedM) {
+    public synchronized void setM(int passedM) {
         m = passedM;
     }
-    public static synchronized void setN(int passedN) {
+    public synchronized void setN(int passedN) {
         n = passedN;
     }
 }

@@ -9,7 +9,6 @@ import java.net.Socket;
 import java.net.SocketException;
 
 public class myfileclient {
-	public final static int FILE_SIZE = 52428800; // max file size
 	public static void main (String [] args ) throws IOException {
 		int bytesRead;
 		int current = 0;
@@ -22,7 +21,7 @@ public class myfileclient {
 		Socket sock = null;
 		int n, m;
 		if (args.length!=3) {
-			System.out.println("Error: Please enter three command line arguments.");
+			System.out.println("Error: This program requires exactly three command line arguments.");
 		}
 		else {
 			try {
@@ -32,7 +31,7 @@ public class myfileclient {
 
 				os = sock.getOutputStream();
 				dos = new DataOutputStream(os);
-
+				
 				//args[2]: files to be sent 
 				dos.writeUTF(args[2]);
 				is = sock.getInputStream();
