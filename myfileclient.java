@@ -9,7 +9,7 @@ import java.net.Socket;
 import java.net.SocketException;
 
 public class myfileclient {
-	public final static int FILE_SIZE = 52428800; // Max file size. Currently unable to find out how to set this dynamically
+	public final static int FILE_SIZE = 52428800; // max file size
 	public static void main (String [] args ) throws IOException {
 		int bytesRead;
 		int current = 0;
@@ -22,7 +22,7 @@ public class myfileclient {
 		Socket sock = null;
 		int n, m;
 		if (args.length!=3) {
-			System.out.println("Error: This program requires exactly three command line arguments.");
+			System.out.println("Error: Please enter three command line arguments.");
 		}
 		else {
 			try {
@@ -71,9 +71,6 @@ public class myfileclient {
 				else if (response.equals("FileNotFound")) {
 					System.out.println("File " + args[0] + " not found");
 				}
-
-
-
 			}
 			catch (SocketException e) {
 				System.out.println("Connection Not Made");
